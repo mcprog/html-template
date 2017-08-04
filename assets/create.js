@@ -16,7 +16,7 @@ $(document).ready(function() {
     var id = getUniqueId(name);
     localStorage[id] = raw;
     addTemplate(name, id);
-    console.log(localStorage);
+    $('#createTemplateForm')[0].reset();
   });
 
 });
