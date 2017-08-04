@@ -23,11 +23,15 @@
 
       </nav>
       <main class="col-sm-9 offset-sm-3 pt-3">
+        <a href="index.html" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </a>
         <h4>Create New Template</h4>
+
         <form id="createTemplateForm">
           <div class="form-group">
             <label for="templateName">Template Name</label>
-            <input type="text" class="form-control" id="templateName" placeholder="Enter template name" required>
+            <input type="text" class="form-control" id="templateName" placeholder="Enter template name" required pattern="[\w]{1,}" title="A-Z or a-z or 0-9 or _">
           </div>
           <div class="form-group">
             <label for="rawHtml">Enter raw html</label>
@@ -60,6 +64,7 @@
           <div id="patternList">
           </div>-->
         </form>
+
       </main>
     </div>
   </div>

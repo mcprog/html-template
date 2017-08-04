@@ -4,8 +4,34 @@
   bottom: 0;
   left: 0;
   padding:  20px;
+  border-right: 1px solid #eee;
+}
+
+.sidenav > ul:not(.custom-menu) > li > .nav-link {
+  border: 2px solid #f7f7f7;
 }
 
 .center {
   text-align: center;
+}
+
+.custom-menu {
+  display: none;
+  position: absolute;
+  background: #0275d8;
+  color: #fff;
+  border-radius: .25rem;
+}
+
+.custom-menu a {
+  cursor: pointer;
+}
+
+.custom-menu a:hover {
+  background: #025aa5;
+}
+
+.nav-focused {
+  border: 2px solid #eee !important;
+  border-radius: .25rem;
 }
