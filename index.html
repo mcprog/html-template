@@ -8,15 +8,20 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="app.css">
   </head>
   <body>
     <div class="container-fluid">
     <div class="row">
-      <nav class="col-sm-3 bg-faded sidenav">
-        <ul id="templateList" class="nav nav-pills flex-column">
-          <li class="nav-item center"><h5>Templates</h5><hr></li>
+      <nav class="col-sm-3 hidden-xs-down bg-faded sidenav">
+        <ul class="nav nav-pills flex-column">
+          <li class="nav-item center"><h5>Templates</h5></li>
         </ul>
+        <hr>
+        <ul id="templateList" class="nav nav-pills flex-column">
+        </ul>
+        <hr>
         <ul id="tauntContainer" class="nav nav-pills flex-column">
           <li id="templateTaunt" class="nav-item">Looks like you don't have any templates</li>
           <li class="nav-item"><a class="nav-link" href="create.html">Create Template</a></li>
@@ -27,11 +32,51 @@
           <li class="nav-item" data-action="delete"><a class="nav-link">Delete</a></li>
         </ul>
       </nav>
-      <div class="col-sm-9 offset-sm-3">
-        index.html
+      <main class="col-sm-9 offset-sm-3 row justify-content-center main">
+
+        <h1 class="col-sm-12 row justify-content-center display-1">HTML Template</h1>
+        <p class="col-sm-12 row justify-content-center lead">A HTML templating tool for your browser</p>
+        <div class="col-md-10 col-sm-12 row">
+          <div class="col-md-5 col-sm-6 card">
+            <div class="card-block row justify-content-center">
+              <h5>Fast</h5>&nbsp;&nbsp;
+              <i class="material-icons">flash_on</i>
+              <p class="card-text">Modern web development techniques as well as lightning-fast <a href="https://jquery.com/">jQuery</a> ensure rapid operations. Use of static pages prioritize ease to the user over ease to the developer.</p>
+            </div>
+          </div>
+          <div class="col-md-5 col-sm-6 offset-md-2 card">
+            <div class="card-block row justify-content-center">
+              <h5>Local</h5>&nbsp;&nbsp;
+              <i class="material-icons">cloud_off</i>
+              <p class="card-text">Using HTML5's local storage, templates are stored locally and never uploaded to the cloud. Templates are saved even after you close your browser.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-10 col-sm-12 row">
+          <div class="col-md-5 col-sm-6 card">
+            <div class="card-block row justify-content-center">
+              <h5>Open Source</h5>&nbsp;&nbsp;
+              <i class="material-icons">code</i>
+              <p class="card-text">Free to use, free to modify under the <a href="https://github.com/mcprog/html-template/blob/master/LICENSE">GNU General Public License v3.0</a>. Just remember to provide source code so others can learn and contribute!</p>
+            </div>
+          </div>
+          <div class="col-md-5 col-sm-6 offset-md-2 card">
+            <div class="card-block row justify-content-center">
+              <h5>Modern</h5>&nbsp;&nbsp;
+              <i class="material-icons">public</i>
+              <p class="card-text">Using <a href="https://v4-alpha.getbootstrap.com/">Bootstrap's</a> newest alpha release, this app achieves the most modern look.</p>
+            </div>
+          </div>
+        </div>
+        <footer class="col-sm-6 row justify-content-center">
+          <div>
+          <a id="github-link" href="https://github.com/mcprog/html-template">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          </div>
+        </footer>
       </div>
+
     </div>
-  </div>
+  </main>
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>

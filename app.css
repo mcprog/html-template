@@ -7,6 +7,12 @@
   border-right: 1px solid #eee;
 }
 
+.main {
+  top: 0;
+  bottom: 0;
+  position: fixed;
+}
+
 .sidenav > ul:not(.custom-menu) > li > .nav-link {
   border: 2px solid #f7f7f7;
 }
@@ -35,3 +41,32 @@
   border: 2px solid #eee !important;
   border-radius: .25rem;
 }
+
+.card {
+  margin-bottom: 30px;
+}
+
+#github-link {
+  background-image: url("octoface.svg");
+  background-repeat: no-repeat;
+}
+
+#github-link:hover {
+  background-image: url("octoface-blue.svg");
+}
+
+#tauntContainer {
+  bottom: 16px;
+  position: fixed;
+}
+
+#templateList {
+  overflow-y: auto;
+  height: 85%;
+}
+
+hr {
+  margin: 0;
+}
+
+::-webkit-scrollbar { visibility: hidden; }
