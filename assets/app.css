@@ -70,3 +70,17 @@ hr {
 }
 
 ::-webkit-scrollbar { visibility: hidden; }
+
+.chip {
+  display: inline-block;
+  padding: 3px 16px;
+  margin: 5px;
+  border-radius: 15px;
+}
+
+.close-chip {
+  font-weight: bold;
+  cursor: pointer;
+  float: right;
+  font-size: 16px;
+}
