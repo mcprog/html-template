@@ -14,8 +14,13 @@ $(document).ready(function() {
     var name = $('#templateName').val();
     var raw = $('#rawHtml').val();
     var id = getUniqueId(name);
-    localStorage[id] = raw;
-    addTemplate(name, id);
+    if (localStorage[name]) {
+      $('#fileExistsModal').modal("show");
+      return;
+    }
+    localStorage[name] = raw;
+    console.log("Submitted!:" + name);
+    addTemplate(name);
     $('#createTemplateForm')[0].reset();
   });
 

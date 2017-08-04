@@ -5,6 +5,10 @@ $(document).ready(function() {
   var query = url.substring(url.indexOf('?') + 1);
   console.log(query);
   $('.nav-link[data-id="' + query + '"]').addClass("active");
+  var patterns = localStorage[query + "-patterns"];
+  if (patterns) {
+    //TODO patterns
+  }
 
   $('#addPatternButton').click(function() {
     var searchFor = $('#searchFor').val();
@@ -12,7 +16,7 @@ $(document).ready(function() {
       $('#patternModal').modal('show');
       return;
     }
-    addPatten(searchFor, $('#replaceWith').val());
+    addPattern(searchFor, $('#replaceWith').val());
   });
 
   $(document).on('click', '.close-chip', function() {
@@ -21,6 +25,6 @@ $(document).ready(function() {
 });
 
 
-function addPatten(search, replace) {
+function addPattern(search, replace) {
   $('#patternList').append('<div class="chip bg-info text-white">[' + search + '], [' + replace + ']&nbsp;&nbsp;<span class="close-chip text-white" aria-hidden="true">&times;</span></div>');
 }

@@ -1,11 +1,13 @@
 $(document).ready(function() {
   for (var i in localStorage) {
     console.log(i);
-    var name = i.substring(0, i.indexOf('-'));
+    /*var name = i.substring(0, i.indexOf('-'));
     console.log(name);
     if (name) {
       addTemplate(name, i);
-    }
+    }*/
+
+    addTemplate(i);
   }
 
   $('#templateList .nav-link').contextmenu(function(ev) {
@@ -48,9 +50,14 @@ $(document).ready(function() {
 
 });
 
-
-function addTemplate(name, id) {
-  var html = '<li class="nav-item"><a class="nav-link" href="template.html?' + id + '" data-id="' + id + '">' + name + '</a></li>';
+function addTemplate(name) {
+  var html = '<li class="nav-item"><a class="nav-link" href="template.html?' + name + '" data-id="' + name + '">' + name + '</a></li>';
   $('#templateList').append(html);
   $('#templateTaunt').remove();
 }
+
+/*function addTemplate(name, id) {
+  var html = '<li class="nav-item"><a class="nav-link" href="template.html?' + id + '" data-id="' + id + '">' + name + '</a></li>';
+  $('#templateList').append(html);
+  $('#templateTaunt').remove();
+}*/

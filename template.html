@@ -12,69 +12,65 @@
   </head>
   <body>
     <div class="container-fluid">
-    <div class="row">
-      <nav class="col-sm-3 bg-faded sidenav">
-        <ul class="nav nav-pills flex-column">
-          <li class="nav-item center"><h5>Templates</h5></li>
-        </ul>
-        <hr>
-        <ul id="templateList" class="nav nav-pills flex-column">
-        </ul>
-        <hr>
-        <ul id="tauntContainer" class="nav nav-pills flex-column">
-          <li class="nav-item"><a class="nav-link" href="create.html">Create Template</a></li>
-        </ul>
-        <ul class="nav nav-pills custom-menu" data-id="">
-          <li class="nav-item" data-action="open"><a class="nav-link">Open</a></li>
-          <li class="nav-item" data-action="rename"><a class="nav-link">Rename</a></li>
-          <li class="nav-item" data-action="delete"><a class="nav-link">Delete</a></li>
-        </ul>
-      </nav>
-      <main class="col-sm-9 offset-sm-3 pt-3">
-        <a href="index.html" class="close" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </a>
-        <h4>Name</h4>
-        <hr>
-
-        <form>
-          <div class="form-group">
-            <label for="templateHtml">Raw html</label>
-            <textarea class="form-control" id="templateHtml" rows="10" required></textarea>
-          </div>
-
-          <div class="input-group">
-            <input type="text" class="form-control" id="searchFor" placeholder="Search for">
-            <input type="text" class="form-control" id="replaceWith" placeholder="Replace with">
-            <span class="input-group-btn">
-              <button class="btn btn-secondary" type="button" id="addPatternButton">Add</button>
-            </span>
-          </div>
-          <div id="patternList">
-          </div>
-          <div id="patternModal" class="modal fade">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Invalid Input</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <p>The "Search for" field must be filled.</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
-                </div>
-              </div>
+      <div class="row">
+        <nav class="col-sm-3 bg-faded sidenav">
+          <ul class="nav nav-pills flex-column">
+            <li class="nav-item center"><h5>Templates</h5></li>
+          </ul>
+          <hr>
+          <ul id="templateList" class="nav nav-pills flex-column"></ul>
+          <hr>
+          <ul id="tauntContainer" class="nav nav-pills flex-column">
+            <li class="nav-item"><a class="nav-link" href="create.html">Create Template</a></li>
+          </ul>
+          <ul class="nav nav-pills custom-menu" data-id="">
+            <li class="nav-item" data-action="open"><a class="nav-link">Open</a></li>
+            <li class="nav-item" data-action="rename"><a class="nav-link">Rename</a></li>
+            <li class="nav-item" data-action="delete"><a class="nav-link">Delete</a></li>
+          </ul>
+        </nav>
+        <main class="col-sm-9 offset-sm-3 pt-3">
+          <a href="index.html" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </a>
+          <h4>Name</h4>
+          <hr>
+          <form>
+            <div class="form-group">
+              <label for="templateHtml">Raw html</label>
+              <textarea class="form-control" id="templateHtml" rows="10" required></textarea>
             </div>
-          </div>
-        </form>
-      </main>
-    </div>
+            <div class="input-group">
+              <input type="text" class="form-control" id="searchFor" placeholder="Search for">
+              <input type="text" class="form-control" id="replaceWith" placeholder="Replace with">
+              <span class="input-group-btn">
+                <button class="btn btn-secondary" type="button" id="addPatternButton">Add</button>
+              </span>
+            </div>
+            <div id="patternList"></div>
+          </form>
+        </main>
+      </div>
   </div>
 
+    <div id="patternModal" class="modal fade">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Invalid Input</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>The "Search for" field must be filled.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
