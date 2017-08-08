@@ -9,9 +9,9 @@ $(document).ready(function() {
 
   $('#templateList').on('contextmenu', '.nav-link', function(ev) {
     ev.preventDefault();
-    if ($(this).hasClass("active")) {
+    /*if ($(this).hasClass("active")) {
       return;
-    }
+    }*/
     $(this).addClass("nav-focused");
     console.log("right clicked");
     $('.custom-menu').show(100).css({
@@ -50,6 +50,11 @@ $(document).ready(function() {
         localStorage[copyName + "-patterns"] = localStorage[id + "-patterns"];
         console.log("Duplicated!:" + copyName);
         addTemplate(copyName);
+        break;
+      case "rename":
+        var base = window.location.pathname;
+        base = base.substring(0, base.lastIndexOf("/") + 1);
+        window.location.assign(base + "rename.html?" + id);
         break;
 
     }

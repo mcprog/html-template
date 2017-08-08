@@ -30,7 +30,7 @@
 .custom-menu {
   display: none;
   position: absolute;
-  background: #0275d8;
+  background: #000;
   color: #fff;
   border-radius: .25rem;
 }
@@ -40,7 +40,7 @@
 }
 
 .custom-menu a:hover {
-  background: #025aa5;
+  background: #161616;
 }
 
 .nav-focused {
