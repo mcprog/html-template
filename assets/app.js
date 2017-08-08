@@ -1,12 +1,13 @@
 $(document).ready(function() {
   for (var i in localStorage) {
     if (i.includes("-patterns")) {
+      console.log("pattern exists: " + i);
       continue;
     }
     addTemplate(i);
   }
 
-  $('#templateList .nav-link').contextmenu(function(ev) {
+  $('#templateList').on('contextmenu', '.nav-link', function(ev) {
     ev.preventDefault();
     if ($(this).hasClass("active")) {
       return;
@@ -38,6 +39,17 @@ $(document).ready(function() {
       case "delete":
         $('#templateList .nav-link[data-id="' + id + '"]').remove();
         localStorage.removeItem(id);
+        localStorage.removeItem(id + "-patterns");
+        break;
+      case "duplicate":
+        var copyName = "copy_of_" + id;
+        while(localStorage[copyName]) {
+          copyName = "copy_of_" + copyName;
+        }
+        localStorage[copyName] = localStorage[id];
+        localStorage[copyName + "-patterns"] = localStorage[id + "-patterns"];
+        console.log("Duplicated!:" + copyName);
+        addTemplate(copyName);
         break;
 
     }

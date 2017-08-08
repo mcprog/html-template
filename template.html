@@ -25,19 +25,33 @@
           </ul>
           <ul class="nav nav-pills custom-menu" data-id="">
             <li class="nav-item" data-action="open"><a class="nav-link">Open</a></li>
+            <li class="nav-item" data-action="duplicate"><a class="nav-link">Duplicate</a></li>
             <li class="nav-item" data-action="rename"><a class="nav-link">Rename</a></li>
             <li class="nav-item" data-action="delete"><a class="nav-link">Delete</a></li>
           </ul>
         </nav>
-        <main class="col-sm-9 offset-sm-3 pt-3">
+        <main class="col-sm-9 offset-sm-3 pt-3 fixed-main">
           <a href="index.html" class="close" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </a>
           <h4>Name</h4>
+
+          <div class="center top-bottom-margin">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button id="templateBack" type="button" class="btn btn-secondary" disabled>Back</button>
+              <button id="templateDelete" type="button" class="btn btn-secondary">Delete</button>
+              <button id="templateSave" type="button" class="btn btn-secondary" disabled>Save</button>
+              <button id="templateNext1" type="button" class="btn btn-secondary">Next</button>
+            </div>
+          </div>
           <hr>
-          <form>
+        </main>
+        <main class="col-sm-9 offset-sm-3 pt-3 main">
+
+
+          <form id="templateForm" class="state state-0">
             <div class="form-group">
-              <label for="templateHtml">Raw html</label>
+              <label for="templateHtml"><strong>Raw html</strong></label>
               <textarea class="form-control" id="templateHtml" rows="10" required></textarea>
             </div>
             <div class="input-group">
@@ -59,14 +73,23 @@
 
               </div>
             </div>
-            <div class="center">
-            <div class="btn-group" role="group" aria-label="Basic example">
-              <button id="templateDelete" type="button" class="btn btn-secondary">Delete</button>
-              <button id="templateSave" type="button" class="btn btn-secondary" disabled>Save</button>
-              <button id="templateNext1" type="button" class="btn btn-secondary">Next</button>
+
+          </form>
+
+          <div class="container state state-1">
+            <strong>What will be changed is highlighted:</strong>
+            <div id="markedText" class="white-grace">
+            </div>
+            <strong>Changed text:</strong>
+            <div id="changedText" class="white-grace">
             </div>
           </div>
-          </form>
+
+
+          <div class="form-group state state-2">
+            <label for="outputHtml"><strong>Output html</strong></label>
+            <textarea class="form-control" id="outputHtml" rows="15"></textarea>
+          </div>
         </main>
       </div>
   </div>
