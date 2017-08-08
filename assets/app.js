@@ -1,12 +1,8 @@
 $(document).ready(function() {
   for (var i in localStorage) {
-    console.log(i);
-    /*var name = i.substring(0, i.indexOf('-'));
-    console.log(name);
-    if (name) {
-      addTemplate(name, i);
-    }*/
-
+    if (i.includes("-patterns")) {
+      continue;
+    }
     addTemplate(i);
   }
 
@@ -54,6 +50,14 @@ function addTemplate(name) {
   var html = '<li class="nav-item"><a class="nav-link" href="template.html?' + name + '" data-id="' + name + '">' + name + '</a></li>';
   $('#templateList').append(html);
   $('#templateTaunt').remove();
+}
+
+function mcEnable(jqStr) {
+  $(jqStr).prop("disabled", false);
+}
+
+function mcDisable(jqStr) {
+  $(jqStr).prop("disabled", true);
 }
 
 /*function addTemplate(name, id) {
