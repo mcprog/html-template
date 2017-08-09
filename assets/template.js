@@ -9,7 +9,8 @@ $(document).ready(function() {
   console.log(query);
   $('.nav-link[data-id="' + query + '"]').addClass("active");
   var patterns = localStorage[query + "-patterns"];
-  if (patterns) {
+  if (patterns && patterns.length > 0) {
+    console.log(patterns);
     var arr = JSON.parse(patterns);
     for (i = 0; i < arr.length; ++i) {
       addPattern(arr[i][0], arr[i][1]);

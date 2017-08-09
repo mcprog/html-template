@@ -47,7 +47,11 @@ $(document).ready(function() {
           copyName = "copy_of_" + copyName;
         }
         localStorage[copyName] = localStorage[id];
-        localStorage[copyName + "-patterns"] = localStorage[id + "-patterns"];
+        var patt = localStorage[id + "-patterns"];
+        if (patt) {
+          localStorage[copyName + "-patterns"] = patt;
+        }
+
         console.log("Duplicated!:" + copyName);
         addTemplate(copyName);
         break;

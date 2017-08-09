@@ -17,10 +17,20 @@ $(document).ready(function() {
     }
     localStorage[name] = raw;
     console.log("Submitted!:" + name);
-    addTemplate(name);
+    renameTemplate(query, name);
+    window.location.assign(pathname + "?" + name);
     $('#renameTemplateForm')[0].reset();
     var oldPatterns = localStorage[query + "-patterns"];
     localStorage.removeItem(query + "-patterns");
-    localStorage[query + "-patterns"] = oldPatterns;
+    localStorage[name + "-patterns"] = oldPatterns;
+    localStorage.removeItem(query);
   });
 });
+
+function renameTemplate(oldName, newName) {
+  var link = $('a.navlink[data-id=' + oldName + ']');
+  link.attr("href", "template.html?" + newName);
+  link.attr("data-id", newName);
+  link.text("background");
+  console.log("reeed");
+}
