@@ -15,6 +15,7 @@ $(document).ready(function() {
   }
   updateListChanged();
   $('#templateHtml').text(localStorage[query]);
+  $('#parse').attr("href", "parse.html?" + query);
 
   $('#addPatternButton').click(function() {
     var searchFor = $('#searchFor').val();
@@ -86,6 +87,7 @@ function setState(state, query) {
   }
   else if (state == 1) {
     var patterns = JSON.parse(localStorage[query + "-patterns"]);
+
     var rawJQ = $('#templateHtml');
     rawJQ.prop("white-space", "pre-wrap");
     var newText = markText(rawJQ.html(), patterns);
@@ -136,9 +138,7 @@ function markText(text, patterns) {
   return newText;
 }
 
-String.prototype.replaceAll = function(target, replacement) {
-  return this.split(target).join(replacement);
-};
+
 
 function changeText(markedText, patterns) {
   for (i = 0; i < patterns.length; ++i) {
@@ -198,4 +198,10 @@ function getCleanText(pattern) {
   var p = pattern.replaceAll('<', '&lt;');
   p = p.replaceAll('>', '&gt;');
   return p;
+}
+
+function getDirtyText(text) {
+  var t = text.replaceAll('&lt;', '<');
+  t = t.replaceAll('&gt;', '>');
+  return t;
 }

@@ -9,9 +9,6 @@ $(document).ready(function() {
 
   $('#templateList').on('contextmenu', '.nav-link', function(ev) {
     ev.preventDefault();
-    /*if ($(this).hasClass("active")) {
-      return;
-    }*/
     $(this).addClass("nav-focused");
     console.log("right clicked");
     $('.custom-menu').show(100).css({
@@ -64,6 +61,10 @@ $(document).ready(function() {
   });
 
 });
+
+String.prototype.replaceAll = function(target, replacement) {
+  return this.split(target).join(replacement);
+};
 
 function addTemplate(name) {
   var html = '<li class="nav-item"><a class="nav-link" href="template.html?' + name + '" data-id="' + name + '">' + name + '</a></li>';

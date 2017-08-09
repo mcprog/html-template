@@ -114,3 +114,13 @@ hr {
 .state {
   display: none;
 }
+
+.hoverLink {
+  color: #014c8c;
+  text-decoration: underline;
+}
+
+.normalLink {
+  color: #0275d8;
+  text-decoration: none;
+}
