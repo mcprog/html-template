@@ -3,20 +3,15 @@ var g_state = 0;
 $(document).ready(function() {
   var pathname = window.location.pathname;
   var url = window.location.href;
-  console.log(pathname + ", " + url);
   var query = url.substring(url.indexOf('?') + 1);
   setState(0, query);
-  console.log(query);
   $('.nav-link[data-id="' + query + '"]').addClass("active");
   var patterns = localStorage[query + "-patterns"];
   if (patterns && patterns.length > 0) {
-    console.log(patterns);
     var arr = JSON.parse(patterns);
     for (i = 0; i < arr.length; ++i) {
       addPattern(arr[i][0], arr[i][1]);
     }
-    console.log("Patterns:");
-    console.log(patterns);
   }
   updateListChanged();
   $('#templateHtml').text(localStorage[query]);
@@ -30,10 +25,8 @@ $(document).ready(function() {
     var replaceWith =  $('#replaceWith').val();
     searchFor = getCleanText(searchFor);
     replaceWith = getCleanText(replaceWith);
-
     addPattern(searchFor, replaceWith);
     savePattern(searchFor, replaceWith, query);
-    console.log(localStorage[query + "-patterns"]);
     updateListChanged();
     $('#searchFor').val("");
     $('#replaceWith').val("");
@@ -41,7 +34,6 @@ $(document).ready(function() {
 
   $(document).on('click', '.close-chip', function() {
     var chip = $(this).closest('.chip');
-    console.log(chip.text());
     var s = chip.text();
     var a = s.indexOf('[');
     var b = s.indexOf(']');
@@ -49,9 +41,6 @@ $(document).ready(function() {
     var d = s.lastIndexOf(']');
     var search = s.substring(a + 1, b);
     var replace = s.substring(c + 1, d);
-
-
-    console.log(search + ", " + replace);
     deletePattern(search, replace, query);
     chip.remove();
     updateListChanged();
@@ -76,18 +65,15 @@ $(document).ready(function() {
     else if (g_state == 1) {
       setState(2, query);
     }
-
   });
 
   $('#templateBack').click(function() {
     if (g_state == 1) {
-
       setState(0, query);
     }
     else if (g_state == 2) {
       setState(1, query);
     }
-
   });
 });
 
@@ -102,10 +88,8 @@ function setState(state, query) {
     var patterns = JSON.parse(localStorage[query + "-patterns"]);
     var rawJQ = $('#templateHtml');
     rawJQ.prop("white-space", "pre-wrap");
-    console.log(rawJQ.prop("white-space"));
     var newText = markText(rawJQ.html(), patterns);
     var changedText = changeText(newText, patterns);
-
     $('#markedText').html(newText);
     $('#changedText').html(changedText);
     mcEnable('#templateBack');
@@ -193,7 +177,6 @@ function savePattern(search, replace, id) {
 
 function deletePattern(search, replace, id) {
   var patterns = localStorage[id + "-patterns"];
-
   var arr = JSON.parse(patterns);
   for (i = 0; i < arr.length; ++i) {
     if (arr[i][0] == search && arr[i][1] == replace) {
@@ -202,16 +185,13 @@ function deletePattern(search, replace, id) {
     }
   }
   localStorage[id + "-patterns"] = JSON.stringify(arr);
-
 }
 
 function addPattern(search, replace) {
   if (search === replace) {
     return;
   }
-
   $('#patternList').append('<div class="chip bg-info text-white">[' + search + '], [' + replace + ']&nbsp;&nbsp;<span class="close-chip text-white" aria-hidden="true">&times;</span></div>');
-
 }
 
 function getCleanText(pattern) {

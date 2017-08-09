@@ -5,6 +5,7 @@ $(document).ready(function() {
   var query = url.substring(url.indexOf('?') + 1);
   $('#renameTitle').text("Rename Template: " + query);
   $('#rawHtml').text(localStorage[query]);
+  $('.nav-link[data-id="' + query + '"]').addClass("active");
 
   $('#renameTemplateForm').submit(function(event) {
     event.preventDefault();

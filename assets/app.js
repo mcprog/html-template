@@ -51,8 +51,6 @@ $(document).ready(function() {
         if (patt) {
           localStorage[copyName + "-patterns"] = patt;
         }
-
-        console.log("Duplicated!:" + copyName);
         addTemplate(copyName);
         break;
       case "rename":
@@ -80,9 +78,3 @@ function mcEnable(jqStr) {
 function mcDisable(jqStr) {
   $(jqStr).prop("disabled", true);
 }
-
-/*function addTemplate(name, id) {
-  var html = '<li class="nav-item"><a class="nav-link" href="template.html?' + id + '" data-id="' + id + '">' + name + '</a></li>';
-  $('#templateList').append(html);
-  $('#templateTaunt').remove();
-}*/
